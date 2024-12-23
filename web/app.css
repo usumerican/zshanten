@@ -1,0 +1,308 @@
+:root {
+  --gap-width: 2px;
+  --tool-height: 3rem;
+  --tool-border: 1px solid #999;
+  --tool-border-radius: 1dvmin;
+}
+* {
+  box-sizing: border-box;
+  color: #000;
+  font-size: 1rem;
+  font-family: 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  user-select: none;
+}
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  touch-action: manipulation;
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+}
+body {
+  background-color: #666;
+  width: 100%;
+  height: 100%;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  display: grid;
+  place-items: center;
+}
+button {
+  appearance: none;
+  background-color: #eee;
+  border: var(--tool-border);
+  border-radius: var(--tool-border-radius);
+  cursor: pointer;
+}
+button:active {
+  opacity: 0.8;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+select {
+  appearance: menulist-button;
+  border: var(--tool-border);
+  border-radius: var(--tool-border-radius);
+  cursor: pointer;
+  width: 100%;
+}
+select:has(option:checked.Modified) {
+  color: #00f;
+}
+textarea {
+  border: var(--tool-border);
+  border-radius: var(--tool-border-radius);
+  overflow-y: scroll;
+  resize: none;
+}
+.App {
+  background-color: #fd0;
+  width: 100%;
+  max-width: 42rem;
+  height: 100%;
+}
+.AlignCenter {
+  display: grid;
+  place-items: center;
+}
+.AlignCenterLeft {
+  display: grid;
+  place-items: center left;
+}
+.TitleBar {
+  height: var(--tool-height);
+  display: grid;
+  gap: var(--gap-width);
+  grid-template-columns: 1fr 2fr 1fr;
+}
+.ToolBar {
+  height: var(--tool-height);
+  display: grid;
+  gap: var(--gap-width);
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  place-items: stretch;
+}
+.Dark {
+  background-color: #ddd !important;
+}
+.Light {
+  background-color: #cff !important;
+}
+.Bright {
+  background-color: #fcf !important;
+}
+.ImportView {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-width);
+  padding: var(--gap-width);
+  justify-content: center;
+}
+.ImportView textarea {
+  height: 6rem;
+}
+.ExportView {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-width);
+  padding: var(--gap-width);
+  justify-content: center;
+}
+.ExportView textarea {
+  height: 6rem;
+}
+.AnalyzeView {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-width);
+  padding: var(--gap-width);
+}
+.SolutionTable {
+  height: calc(var(--tool-height) * 2);
+  flex-grow: 1;
+  overflow-y: scroll;
+}
+.SolutionRowBase {
+  padding: var(--gap-width);
+  display: grid;
+  gap: var(--gap-width);
+  grid-template-columns: calc(var(--tool-height) * 0.75) repeat(3, 2rem) 1fr;
+}
+.SolutionRow {
+  background-color: #fff;
+  min-height: var(--tool-height);
+  margin: var(--gap-width);
+}
+.SolutionRow button {
+  width: 100%;
+  aspect-ratio: 3/4;
+}
+.PracticeView {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-width);
+  padding: var(--gap-width);
+  justify-content: center;
+}
+.StateOutput {
+  background-color: #ffc;
+  height: var(--tool-height);
+}
+.MainView {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-width);
+  padding: var(--gap-width);
+  justify-content: center;
+}
+.TileList {
+  background-color: #eee;
+  min-height: 1.6rem;
+  display: grid;
+  grid-auto-rows: 1.6rem;
+  grid-template-columns: repeat(auto-fit, 1.2rem);
+}
+.TileList > * {
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: end;
+}
+.TileList > * > * {
+  color: #fff;
+  background-color: #0009;
+  font:
+    0.6rem Verdana,
+    sans-serif;
+}
+.TileSelect {
+  background-color: #eee;
+  height: var(--tool-height);
+  display: grid;
+  grid-template-columns: repeat(14, minmax(0, var(--tool-height)));
+}
+.TilePad {
+  display: grid;
+  grid-template-rows: repeat(4, minmax(0, var(--tool-height)));
+  grid-template-columns: repeat(9, minmax(0, var(--tool-height)));
+  justify-content: center;
+}
+.TileKind0 {
+  background: #fff no-repeat center/contain url('svg/1m.svg');
+}
+.TileKind1 {
+  background: #fff no-repeat center/contain url('svg/2m.svg');
+}
+.TileKind2 {
+  background: #fff no-repeat center/contain url('svg/3m.svg');
+}
+.TileKind3 {
+  background: #fff no-repeat center/contain url('svg/4m.svg');
+}
+.TileKind4 {
+  background: #fff no-repeat center/contain url('svg/5m.svg');
+}
+.TileKind5 {
+  background: #fff no-repeat center/contain url('svg/6m.svg');
+}
+.TileKind6 {
+  background: #fff no-repeat center/contain url('svg/7m.svg');
+}
+.TileKind7 {
+  background: #fff no-repeat center/contain url('svg/8m.svg');
+}
+.TileKind8 {
+  background: #fff no-repeat center/contain url('svg/9m.svg');
+}
+.TileKind9 {
+  background: #fff no-repeat center/contain url('svg/1p.svg');
+}
+.TileKind10 {
+  background: #fff no-repeat center/contain url('svg/2p.svg');
+}
+.TileKind11 {
+  background: #fff no-repeat center/contain url('svg/3p.svg');
+}
+.TileKind12 {
+  background: #fff no-repeat center/contain url('svg/4p.svg');
+}
+.TileKind13 {
+  background: #fff no-repeat center/contain url('svg/5p.svg');
+}
+.TileKind14 {
+  background: #fff no-repeat center/contain url('svg/6p.svg');
+}
+.TileKind15 {
+  background: #fff no-repeat center/contain url('svg/7p.svg');
+}
+.TileKind16 {
+  background: #fff no-repeat center/contain url('svg/8p.svg');
+}
+.TileKind17 {
+  background: #fff no-repeat center/contain url('svg/9p.svg');
+}
+.TileKind18 {
+  background: #fff no-repeat center/contain url('svg/1s.svg');
+}
+.TileKind19 {
+  background: #fff no-repeat center/contain url('svg/2s.svg');
+}
+.TileKind20 {
+  background: #fff no-repeat center/contain url('svg/3s.svg');
+}
+.TileKind21 {
+  background: #fff no-repeat center/contain url('svg/4s.svg');
+}
+.TileKind22 {
+  background: #fff no-repeat center/contain url('svg/5s.svg');
+}
+.TileKind23 {
+  background: #fff no-repeat center/contain url('svg/6s.svg');
+}
+.TileKind24 {
+  background: #fff no-repeat center/contain url('svg/7s.svg');
+}
+.TileKind25 {
+  background: #fff no-repeat center/contain url('svg/8s.svg');
+}
+.TileKind26 {
+  background: #fff no-repeat center/contain url('svg/9s.svg');
+}
+.TileKind27 {
+  background: #fff no-repeat center/contain url('svg/1z.svg');
+}
+.TileKind28 {
+  background: #fff no-repeat center/contain url('svg/2z.svg');
+}
+.TileKind29 {
+  background: #fff no-repeat center/contain url('svg/3z.svg');
+}
+.TileKind30 {
+  background: #fff no-repeat center/contain url('svg/4z.svg');
+}
+.TileKind31 {
+  background: #fff no-repeat center/contain none;
+}
+.TileKind32 {
+  background: #fff no-repeat center/contain url('svg/6z.svg');
+}
+.TileKind33 {
+  background: #fff no-repeat center/contain url('svg/7z.svg');
+}

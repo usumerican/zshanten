@@ -1,0 +1,11 @@
+.*
+dist/
+node_modules/
+src/dat/
+tmp/
+zig-*/
+
+!.editorconfig
+!.github/
+!.gitignore
+!.prettierrc.json

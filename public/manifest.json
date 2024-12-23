@@ -1,0 +1,39 @@
+{
+  "name": "Z向聴",
+  "short_name": "Z向聴",
+  "description": "麻雀の牌理・牌効率ツールです。向聴数や有効牌が分かります。",
+  "start_url": "app.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#fd0",
+  "background_color": "#fd0",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "icon512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot_wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "wide"
+    },
+    {
+      "src": "screenshot_narrow.png",
+      "sizes": "720x1280",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "narrow"
+    }
+  ]
+}
