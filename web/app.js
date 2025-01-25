@@ -1,6 +1,6 @@
 /* globals __APP_VERSION__ */
 
-import { sampleArray, shuffleArray } from './shuffle';
+import { shuffle, toSampled } from 'jshuffle';
 import {
   FREQUENCY_MAX,
   getRankDistributions,
@@ -708,7 +708,7 @@ on(window, 'DOMContentLoaded', async () => {
       this.tilePad = new TilePad(this.el.querySelector('.TilePad'), this);
       this.backButton = this.el.querySelector('.BackButton');
       this.discardButton = this.el.querySelector('.DiscardButton');
-      this.stockTileKinds = shuffleArray(
+      this.stockTileKinds = shuffle(
         concealedTileKinds.reduce(
           (tileKinds, k) => (tileKinds.splice(tileKinds.indexOf(k), 1), tileKinds),
           availableTileKinds.slice(),
@@ -1016,7 +1016,7 @@ on(window, 'DOMContentLoaded', async () => {
 
       on(this.randomButton, 'click', () => {
         if (availableTileKindSet.size) {
-          this.concealedTileKinds = sampleArray(availableTileKinds.slice(), parseInt(this.randomSelect.value)).sort(
+          this.concealedTileKinds = toSampled(availableTileKinds, parseInt(this.randomSelect.value)).sort(
             (a, b) => a - b,
           );
           this.update();
