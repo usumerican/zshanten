@@ -1,6 +1,6 @@
 {
   "name": "zshanten",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,13 +11,13 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "devDependencies": {
-    "eslint": "^9.15.0",
-    "prettier": "^3.3.3",
-    "vite": "^5.4.11",
-    "vitest": "^2.1.5"
-  },
   "dependencies": {
-    "jshuffle": "^0.1.0"
+    "jshuffle": "^0.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.21.0",
+    "prettier": "^3.5.2",
+    "vite": "^6.2.0",
+    "vitest": "^3.0.7"
   }
 }
